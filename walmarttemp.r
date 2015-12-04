@@ -51,7 +51,7 @@ trial=test[,c(1,4,5)]
 t=ddply(trial,.(VisitNumber,DepartmentDescription),sumsc)
 sctest=reshape(t,idvar='VisitNumber',timevar='DepartmentDescription',direction='wide')
 sctest[is.na(sctest)]=0
-
+sctest[,paste(setdiff(names(sctrain),names(sctest)))]=rep(0,95674)
 trial=test[,c(1,4,5)]
 t=ddply(trial,.(VisitNumber,DepartmentDescription),sumsc)
 sctest=reshape(t,idvar='VisitNumber',timevar='DepartmentDescription',direction='wide')
