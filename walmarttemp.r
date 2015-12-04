@@ -56,3 +56,8 @@ trial=test[,c(1,4,5)]
 t=ddply(trial,.(VisitNumber,DepartmentDescription),sumsc)
 sctest=reshape(t,idvar='VisitNumber',timevar='DepartmentDescription',direction='wide')
 sctest[is.na(sctest)]=0
+
+trial=train[,c(2,5,6)]
+t=ddply(trial,.(VisitNumber,DepartmentDescription),sumsc)
+sctrain=reshape(t,idvar='VisitNumber',timevar='DepartmentDescription',direction='wide')
+sctrain[is.na(sctest)]=0
