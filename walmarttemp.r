@@ -61,3 +61,5 @@ trial=train[,c(2,5,6)]
 t=ddply(trial,.(VisitNumber,DepartmentDescription),sumsc)
 sctrain=reshape(t,idvar='VisitNumber',timevar='DepartmentDescription',direction='wide')
 sctrain[is.na(sctrain)]=0
+trainadd=cbind(dtmsparse,dtmsparse3,sctrain)
+testadd=cbind(dtmsparse2,dtmsparse4,sctest)
